@@ -3,19 +3,18 @@
 $message = "";
 // Initialise la variable $message comme une chaîne vide.
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
     // Vérifie si le formulaire a été soumis avec la méthode POST.
 
-    if (!empty($_POST["quantity"]) && !empty($_POST["product"])) {
+    if (array_key_exists("quantity", $_POST) && array_key_exists("product", $_POST)) {
+        // Code à exécuter si les clés 'quantity' et 'product' existent dans le tableau $_POST
         // Vérifie si les champs 'quantity' et 'product' ne sont pas vides.
-        // !empty retourne true si la variable n'est pas vide.
+       
 
-        $quantity =($_POST["quantity"]);
-        // Récupère et échappe la valeur de 'quantity' pour éviter les failles XSS.
+        $quantity = $_POST["quantity"];
 
 
-        $product =($_POST["product"]);
-        // Récupère et échappe la valeur de 'product' pour éviter les failles XSS.
+        $product = $_POST["product"];
 
         $message = "Votre commande de $quantity $product a bien été enregistrée.";
         // Génère un message confirmant que la commande a bien été enregistrée.
@@ -24,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Si un ou les deux champs sont vides, affiche un message d'erreur.
         $message = "Veuillez remplir tous les champs.";
     }
-}
+
 
    
 
