@@ -1,5 +1,17 @@
 <?php
 
+
+// Je récupère le fichier config.php
+require_once '../config.php';
+
+
+
+
+// Je demarre la session : php créera un id unique sous forme de cookie pour chaque utilisateur
+// et stockera les données de session dans le serveur 
+session_start();
+
+
 $message = "";
 // Initialise la variable $message comme une chaîne vide.
 
@@ -11,17 +23,16 @@ $message = "";
         // Vérifie si les champs 'quantity' et 'product' ne sont pas vides.
        
 
-        $quantity = $_POST["quantity"];
+        $order =[
+            "quantity" => $_POST["quantity"],
+            "product" => $_POST["product"]
+        ];//je crée un tableau pour stocker les données du formulaire
 
+        $_SESSION["order"] = $order;
+        //je stocke les données du formulaire dans la session
 
-        $product = $_POST["product"];
+        
 
-        $message = "Votre commande de $quantity $product a bien été enregistrée.";
-        // Génère un message confirmant que la commande a bien été enregistrée.
-
-    } else {
-        // Si un ou les deux champs sont vides, affiche un message d'erreur.
-        $message = "Veuillez remplir tous les champs.";
     }
 
 

@@ -1,50 +1,49 @@
 <!DOCTYPE html>
-<html lang="fr
-">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    
 
-
-
-<!-- je crée le formulaire sur view (ici) que je récupere sur le controller via requiere_once -->
 <header>
+<nav>
+    <ul>
+        <li>Créer une commande</li>
+    </ul>
+</nav>
+</header>
 
-<h2><?php echo $message ?></h2>
+<main>
+
+<!-- Vérifie si une commande ("order") existe dans la session utilisateur -->
+<?php if (array_key_exists("order", $_SESSION)) : ?>
+    <p>
+        Vous avez une commande en attente : 
+        <?php echo $_SESSION["order"]["quantity"]; ?> :
+        <?php echo $_SESSION["order"]["product"]; ?>
+    </p>
+<?php endif; ?>
 
 <form method="post">
-
-    <label for="quantity">Quantity
-
-        <input type="text" name="quantity" id="">
-
+    <label for="quantity">Quantité :
+        <input type="text" name="quantity" id="quantity">
     </label>
 
-    <label for="product">
-
+    <label for="product">Produit :
         <select name="product">
-<!-- je crée les options que je récupere sur le controller via requiere_once -->
-            <option value="Playstation"> Playstation</option>
-
+            <option value="Playstation">Playstation</option>
             <option value="Nitendo">Nitendo</option>
-
             <option value="Xbox">Xbox</option>
-
             <option value="Game-Boy">Game-Boy</option>
-
         </select>
-
-
+    </label>
 
     <button type="submit">Valider</button>
-
-
 </form>
-</header>
+
+</main>
 
 </body>
 </html>
