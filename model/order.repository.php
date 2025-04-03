@@ -17,11 +17,19 @@ function findOrderByUser(){
 //je crée une fonction pour créé un commande qui prends en compte deux facteur($product,$quantity)
 // product correspond aux produits et quantity a la quantité de produit commandé dans cet ordre
 function createOrder ($product, $quantity){
+
+    if ($quantity <=0 || $quantity > 3){ // si la quantié est inferieur ou égale a 0 ou superieur a 3 return false
+        return false;
+    }
+        else{ // else product et quantité deviennent des variable.
+        
+
     $order =[
         "product" => $product,
         "quantity"=> $quantity,
     ];
     return $order; // je return la valeur order pour ensuite la sauvegarder via la function saveOrder
+}
 }
 
 // creation de la function saveOrder qui prends en compte $order retourné ci dessus

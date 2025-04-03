@@ -17,6 +17,8 @@
 
 <main>
 
+<p><?php echo $message ?></p>
+
 <!-- si il y a une valeur orderByUser alors afficher la valeur de product et celle de quantité -->
 <?php if ($orderByUser){?>
     <p>Vous avez une commande en attente : <?php echo $orderByUser['product']; ?> <?php echo $orderByUser['quantity']; ?> </p>

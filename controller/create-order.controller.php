@@ -25,7 +25,14 @@ $message = "";
     {
        
         //*La fonction createOrder crée la valeur $order qui prends en compte deux facteur (product et quantity) via la method $_POST
-        $order = createOrder ($_POST['product'], $_POST[$quantity]);
+        $order = createOrder ($_POST['product'], $_POST['quantity']);
+
+        if ($order){  // si $order contient une commande il sauve la ciommande via la fonction saveOrder
+            saveOrder($order);
+        }else{ // sinon $message devient "impossible de creer la commande
+            $message = "impossible de créé la commande";
+        }
+
         saveOrder($order);
     } //saveOrder est une function qui permet de sauvegarder la valeur $order créé ci-dessu
 
