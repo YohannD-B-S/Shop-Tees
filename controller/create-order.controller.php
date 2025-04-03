@@ -4,6 +4,8 @@
 // Je récupère le fichier config.php
 require_once '../config.php';
 require_once '../model/product-repository.php';
+require_once '../model/order.repository.php'
+<model></model>
 
 
 
@@ -19,22 +21,14 @@ $message = "";
 
     // Vérifie si le formulaire a été soumis avec la méthode POST.
 
-    if (array_key_exists("quantity", $_POST) && array_key_exists("product", $_POST)) {
-        // Code à exécuter si les clés 'quantity' et 'product' existent dans le tableau $_POST
-        // Vérifie si les champs 'quantity' et 'product' ne sont pas vides.
+    if (array_key_exists("quantity", $_POST) && 
+    array_key_exists("product", $_POST)) 
+    {
        
-
-        $order =[
-            "quantity" => $_POST["quantity"],
-            "product" => $_POST["product"]
-        ];//je crée un tableau pour stocker les données du formulaire
-
-        $_SESSION["order"] = $order;
-        //je stocke les données du formulaire dans la session
-
-        
-
-    }
+        //*La fonction createOrder crée la valeur $order qui prends en compte deux facteur (product et quantity) via la method $_POST
+        $order = createOrder ($_POST['product'], $_POST[$quantity]);
+        saveOrder($order);
+    } //saveOrder est une function qui permet de sauvegarder la valeur $order créé ci-dessu
 
 
    

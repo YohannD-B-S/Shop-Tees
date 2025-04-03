@@ -1,7 +1,3 @@
-Playstation
-Nitendo
-Xbox
-Game-Boy
 
 <?php
 
@@ -10,5 +6,8 @@ $products = [
     "Nitendo",
     "Xbox",
     "Game-Boy", 
-]
+];
 ?>
+
+
+

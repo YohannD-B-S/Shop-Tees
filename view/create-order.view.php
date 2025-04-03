@@ -33,8 +33,8 @@
 
     <label for="product">Produit :
         <select name="product" id="">
-            <?php foreach ($product as $product) {?>
-                <option value="<?php echo $product ; ?>"></option>
+            <?php foreach ($products as $product) {?>
+                <option value="<?php echo $product ; ?>"><?php echo $product ; ?>'</option>
                 <?php } ?>
         </select>
     </label>
