@@ -5,7 +5,7 @@
 function createOrder ($product, $quantity){
     $order =[
         "product" => $product,
-        "quantity"=> $quantity
+        "quantity"=> $quantity,
     ];
     return $order; // je return la valeur order pour ensuite la sauvegarder via la function saveOrder
 }

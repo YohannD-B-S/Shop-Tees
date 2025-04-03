@@ -4,8 +4,7 @@
 // Je récupère le fichier config.php
 require_once '../config.php';
 require_once '../model/product-repository.php';
-require_once '../model/order.repository.php'
-<model></model>
+require_once '../model/order.repository.php';
 
 
 
