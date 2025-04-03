@@ -20,27 +20,17 @@ $message = "";
 
     // Vérifie si le formulaire a été soumis avec la méthode POST.
 
-    if (array_key_exists("quantity", $_POST) && 
+if (array_key_exists("quantity", $_POST) && 
     array_key_exists("product", $_POST)) 
     {
-       
-        //*La fonction createOrder crée la valeur $order qui prends en compte deux facteur (product et quantity) via la method $_POST
+        try{ //essaye de donner une valeur  a la variable $order vi la function createOrder
         $order = createOrder ($_POST['product'], $_POST['quantity']);
-
-        if ($order){  // si $order contient une commande il sauve la ciommande via la fonction saveOrder
-            saveOrder($order);
-        }else{ // sinon $message devient "impossible de creer la commande
-            $message = "impossible de créé la commande";
+            saveOrder($order); // si il ya une vaaleur, sauve $order via la function saveOrder
+        } catch(Exception $e) { //si il n'y pas de valeur, attrappe l'exception a la variable $e
+            $message = $e -> getMessage(); //le message = $e qui attrappe le message situer dans la function via la fonction getMessage
         }
-
-        saveOrder($order);
-    } //saveOrder est une function qui permet de sauvegarder la valeur $order créé ci-dessu
-
+    } 
 $orderByUser = findOrderByUser();
 // je donne une valeur au resultat de ma fonction findOrderByUser
-   
-
-
 //on vient requpéré le fichier view
-
 require_once '../view/create-order.view.php';

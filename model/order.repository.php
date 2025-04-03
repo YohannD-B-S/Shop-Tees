@@ -18,8 +18,8 @@ function findOrderByUser(){
 // product correspond aux produits et quantity a la quantité de produit commandé dans cet ordre
 function createOrder ($product, $quantity){
 
-    if ($quantity <=0 || $quantity > 3){ // si la quantié est inferieur ou égale a 0 ou superieur a 3 return false
-        return false;
+    if ($quantity <=0 || $quantity > 3){ // si la quantié est inferieur ou égale a 0 ou superieur a 3
+        throw new Exception("1 à 3 consoles de jeu maximum !!"); //on leve une exception qui donne le message 
     }
         else{ // else product et quantité deviennent des variable.
         
