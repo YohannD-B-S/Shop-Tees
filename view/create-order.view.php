@@ -17,14 +17,17 @@
 
 <main>
 
-<!-- Vérifie si une commande ("order") existe dans la session utilisateur -->
-<?php if (array_key_exists("order", $_SESSION)) : ?>
-    <p>
-        Vous avez une commande en attente : 
-        <?php echo $_SESSION["order"]["quantity"]; ?> :
-        <?php echo $_SESSION["order"]["product"]; ?>
-    </p>
-<?php endif; ?>
+<!-- si il y a une valeur orderByUser alors afficher la valeur de product et celle de quantité -->
+<?php if ($orderByUser){?>
+    <p>Vous avez une commande en attente : <?php echo $orderByUser['product']; ?> <?php echo $orderByUser['quantity']; ?> </p>
+
+
+<?php } ?>
+
+
+
+
+
 
 <form method="post">
     <label for="quantity">Quantité :

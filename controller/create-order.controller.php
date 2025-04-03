@@ -29,7 +29,8 @@ $message = "";
         saveOrder($order);
     } //saveOrder est une function qui permet de sauvegarder la valeur $order créé ci-dessu
 
-
+$orderByUser = findOrderByUser();
+// je donne une valeur au resultat de ma fonction findOrderByUser
    
 
 
