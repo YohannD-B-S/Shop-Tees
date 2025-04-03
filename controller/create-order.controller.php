@@ -3,6 +3,7 @@
 
 // Je récupère le fichier config.php
 require_once '../config.php';
+require_once '../model/product-repository.php';
 
 
 
