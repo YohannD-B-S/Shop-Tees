@@ -27,7 +27,8 @@ function createOrder ($product, $quantity){
     $order =[
         "product" => $product,
         "quantity"=> $quantity,
-        "createdAt" => new DateTime(""), //creation de la date  sans ariable pour que la commande soit cree a l'instant T
+        "createdAt" => new DateTime(""),//creation de la date  sans ariable pour que la commande soit cree a l'instant T
+        "status" => "CART", // status de la commande est cree
     ];
     return $order; // je return la valeur order pour ensuite la sauvegarder via la function saveOrder
 }
