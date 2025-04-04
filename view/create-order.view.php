@@ -1,5 +1,5 @@
 <?php
-require_once '../partial/header.php';?> //
+require_once '../view/partial/header.php';?> //
 
 <p><?php echo $message ?></p>
 
