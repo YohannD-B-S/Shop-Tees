@@ -1,5 +1,9 @@
+<?php
+require_once '../config.php'; ?>
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -17,7 +21,7 @@
     </header>
 
     <main>
-        
+
          <h1>Payer une commande</h1>
 
         <!-- si il y a une valeur orderByUser alors afficher la valeur de product et celle de quantité -->
