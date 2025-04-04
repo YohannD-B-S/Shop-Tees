@@ -1,5 +1,5 @@
 <?php 
-
+require_once '../config.php'; // Je récupère le fichier config.php
 session_start(); // je demarre la session : php créera un id unique sous forme de cookie pour chaque utilisateur et stockera les données de session dans le serveur
 
 require_once '../model/order.repository.php'; // je requpère le fichier order.repository.php
