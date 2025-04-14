@@ -10,3 +10,13 @@ class Order{ //creation d'une class Order qui viendra remplacer le tableau des a
 
     public $createdAt; // creation d'une variable createdAt afin d'y stoquer la date du produit.
 }
+
+
+// je creer une variable $order qui vas évolué en fonctiond des parametre produit que je veux cibler 
+
+$order = new Order(); 
+
+$order -> product = "playstation"; // ici la variable product deviens le nom de mon article
+$order -> quantity = 1; // la il devient la quantité coimmandé
+$order -> status = 'CART'; // ici il deviens le status de la commande 
+$order -> createdAt = new DateTime(); // et ici il est la date de la commande.
